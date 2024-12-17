@@ -1,0 +1,301 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+<div class="main-banner">
+    <video autoplay muted loop id="myVideo">
+        <source src="{% static 'vd/1111.mp4' %}" type="video/mp4">
+      </video>
+      
+      <div class="contenter">
+        <div class="row">
+            <div class="col-lg-6 animate__animated animate__fadeInLeft">
+                <img src="{% static 'img/cigsida2.png' %}" alt="CIGSIDA Logo" style="max-height: 250px;">
+            </div>
+            <div class="col-lg-6 animate__animated animate__fadeInUp">
+              
+              <h2 class="animate__animated animate__fadeInDown" style="color: #f0f0f1;">1° Edition 2025</h2>
+              <h3 class="animate__animated animate__fadeInUp animate__delay-1s">Conférence Internationale sur la Gouvernance Sécuritaire, l'Innovation et le Développement en Afrique</h3>
+            </div>
+          </div>
+
+      </div> 
+</div>
+<section id="about">
+    <div class="container">
+        <div class="row">
+          <div class="col-lg-6 animate__animated animate__fadeInLeft">
+            <h2 >A Propos de l'événement </h2>
+            <p>Cet événement mettra un accent particulier sur l'importance de la participation du secteur privé et des collectivités locales dans la gouvernance sécuritaire. En effet, les actions de sécurisation doivent être inclusives et impliquent la collaboration de tous les acteurs concernés, du secteur public au secteur privé, en passant par les autorités locales. À travers des débats enrichissants, des études de cas et des échanges d’expériences, nous aspirons à proposer des solutions concrètes et adaptées aux réalités locales.</p>
+          </div>
+          <div class="col-lg-3 animate__animated animate__fadeInUp">
+            <h2>Ou ?</h2>
+            <p>à l’Université Ibn Zohr d’Agadir , Maroc</p>
+          </div>
+          <div class="col-lg-3 animate__animated animate__fadeInUp animate__delay-1s">
+            <h2>Quand ?</h2>
+            <p>Jeudi et Vendredi<br>le 27 et 28 novembre 2025</p>
+          </div>
+        </div>
+    </div>
+    
+</section>
+
+
+
+<section id="axes-section">
+    <div class="section-header">
+        <h2 style="">Axes de la Conférence </h2>
+        <p>GSIDA-2025</p>
+    </div>
+    <div class="container" style="margin-left:0px;margin-right:0px;">
+        
+        <div class="row" style="margin-left:0px;margin-right:0px;">
+            <div class="col-md-7">
+                <div style="position: relative; height: 600px; overflow: hidden; ">
+                <ul class="list-group list-group-flush scrolling-list" style="">
+                    <li class="list-group-item">1.	Rôle du Secteur Privé dans la Gouvernance Sécuritaire</br><p>L'implication croissante du secteur privé dans la gestion de la sécurité, y compris ses responsabilités et la collaboration avec le secteur public.</p></li>
+                    <li class="list-group-item">2.	Rôle des Sociétés de Sécurité Privées</br><p>L'analyse du cadre légal et des pratiques des sociétés de sécurité privées et leur contribution à la sécurité publique.</p></li>
+                    <li class="list-group-item">3.	Rôle des Communes Locales dans la Gouvernance Sécuritaire</br><p>La place des autorités locales dans la mise en œuvre des politiques de sécurité publique et leur partenariat avec les forces nationales.</p></li>
+                    <li class="list-group-item">4.	Implication de la Société Civile et des Communautés</br><p>Le rôle de la société civile dans la gouvernance sécuritaire et la manière dont elle participe à l'élaboration des politiques de sécurité.</p></li>
+                    <li class="list-group-item">5.	Technologies et Innovations dans la Sécurité</br><p>L'utilisation de technologies avancées et innovantes dans la gestion de la sécurité, y compris l'IA, les systèmes de surveillance et la cybersécurité.</p></li>
+                    <li class="list-group-item">6.	Réformes et Cadre Légal</br><p>Les réformes nécessaires pour améliorer le cadre juridique de la sécurité et garantir des systèmes de gouvernance sécuritaire efficaces et respectueux des droits de l’homme.</p></li>
+                    <li class="list-group-item">7.	Problématiques Sociales, Santé et Sécurité</br><p>Comment les problèmes sociaux, la santé publique et la sécurité sont interconnectés et influencent les politiques de sécurité en Afrique.</p></li>
+                    <li class="list-group-item">8.	Leadership et Gestion de Crise</br><p>Le rôle du leadership dans la gestion des crises et la manière dont la formation des dirigeants peut améliorer la gestion de la sécurité en période de crise.</p></li>
+                    <li class="list-group-item">9.	Initiative Atlantique et Mise en Application</br><p>Examen de l'Initiative Atlantique, de ses objectifs, et de la manière dont elle soutient la coopération sécuritaire et le développement économique en Afrique.</p></li>
+                    <li class="list-group-item">10.	Idées Additionnelles</br><p>Des initiatives innovantes, telles que l'utilisation des médias numériques pour la sensibilisation, la lutte contre la radicalisation, et la promotion de l'inclusion sociale et culturelle à travers les technologies.</p></li>
+                  </ul>
+                  <button class="scroll-down-btn" onclick="scrollDown()"style="align-items: center;">
+                    <i class="fas fa-chevron-down"></i>
+                  </button>
+                </div>
+            </div>
+            <div class="col-md-5 d-flex justify-content-center align-items-center"style="padding: 0;margin:0px;">
+                <div class="text-center">
+                    <img src="{% static 'img/cigsida3.png' %}" alt="CIGSIDA Logo" style="max-width: 80%;height: auto;">
+                    <div class="section-header">
+                        <p>1° Edition 2025</p>
+                        <h3>Conférence Internationale sur la Gouvernance Sécuritaire, l'Innovation et le Développement en Afrique</h3>
+                    </div>
+                </div>
+            </div>
+       </div>
+    </div>
+</section>
+<section id="speakers" class="wow fadeInUp">
+    <div class="container">
+        <div class="section-header">
+            <h2 style=""> Honor Committee </h2>
+            <p>GSIDA-2025</p>
+        </div>
+
+      <div class="row">
+        <div class="col-lg-4 col-md-6">
+          <div class="speaker">
+            <img src="{% static 'img/2.jpg' %}" alt="Speaker 1" class="img-fluid">
+            <div class="details">
+              <h3><a href="speaker-details.html">paulo águas</a></h3>
+              <p>President of Algarve University, portugal  Sed nam ut dolor qui repellendus iusto odit.</p>
+              <div class="social">
+                <a href=""><i class="fa fa-twitter"></i></a>
+                <a href=""><i class="fa fa-facebook"></i></a>
+                <a href=""><i class="fa fa-google-plus"></i></a>
+                <a href=""><i class="fa fa-linkedin"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+       
+        <div class="col-lg-4 col-md-6">
+          <div class="speaker">
+            <img src="{% static 'img/3.jpg' %}" alt="Speaker 2" class="img-fluid">
+            <div class="details">
+              <h3><a href="speaker-details.html">Richard SOPARNOT</a></h3>
+              <p>General Director of ESC Clermont Business School, France</p>
+              <div class="social">
+                <a href=""><i class="fa fa-twitter"></i></a>
+                <a href=""><i class="fa fa-facebook"></i></a>
+                <a href=""><i class="fa fa-google-plus"></i></a>
+                <a href=""><i class="fa fa-linkedin"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+
+        <div class="col-lg-4 col-md-6">
+          <div class="speaker">
+            <img src="{% static 'img/5.jpg' %}" alt="Speaker 3" class="img-fluid">
+            <div class="details">
+              <h3><a href="speaker-details.html">Luís Serra Coelho</a></h3>
+              <p>Dean of Economics faculty, Algarve University, Portugal</p>
+              <div class="social">
+                <a href=""><i class="fa fa-twitter"></i></a>
+                <a href=""><i class="fa fa-facebook"></i></a>
+                <a href=""><i class="fa fa-google-plus"></i></a>
+                <a href=""><i class="fa fa-linkedin"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="col-lg-4 col-md-6">
+          <div class="speaker">
+            <img src="{% static 'img/6.jpg' %}" alt="Speaker 4" class="img-fluid">
+            <div class="details">
+              <h3><a href="speaker-details.html">Pr. Sanaz Nikghadam</a></h3>
+              <p>Professor of Finance & Economics in Business Department, University of Minnesota Crookston, USA .</p>
+              <div class="social">
+                <a href=""><i class="fa fa-twitter"></i></a>
+                <a href=""><i class="fa fa-facebook"></i></a>
+                <a href=""><i class="fa fa-google-plus"></i></a>
+                <a href=""><i class="fa fa-linkedin"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+        <div class="col-lg-4 col-md-6">
+          <div class="speaker">
+            <img src="{% static 'img/7.jpg' %}" alt="Speaker 5" class="img-fluid">
+            <div class="details">
+              <h3><a href="speaker-details.html">Pr. PAPA Ibra KEBE</a></h3>
+              <p>ESC-Clermont, France.</p>
+              <div class="social">
+                <a href=""><i class="fa fa-twitter"></i></a>
+                <a href=""><i class="fa fa-facebook"></i></a>
+                <a href=""><i class="fa fa-google-plus"></i></a>
+                <a href=""><i class="fa fa-linkedin"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="col-lg-4 col-md-6">
+          <div class="speaker">
+            <img src="{% static 'img/11.jpg' %}" alt="Speaker 6" class="img-fluid">
+            <div class="details">
+              <h3><a href="speaker-details.html">Abdelaziz BENDOU</a></h3>
+              <p>President of Ibn Zohr University, Agadir, Morocco</p>
+              <div class="social">
+                <a href=""><i class="fa fa-twitter"></i></a>
+                <a href=""><i class="fa fa-facebook"></i></a>
+                <a href=""><i class="fa fa-google-plus"></i></a>
+                <a href=""><i class="fa fa-linkedin"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+<section id="conference-committees-section">
+    
+    <div class="container" >
+        <div class="section-header">
+            <h2 style=""> le 27 et 28 novembre 2025</h2>
+            <p>à l’Université Ibn Zohr d’Agadir , Maroc</p>
+        </div>
+        <h3 style="align-items: center;"> </h3>
+        <div class="mr-auto">
+            
+            <div id="timer-912100224" class="ux-timer " 
+                data-countdown="2025-01-01T00:00:00">
+                
+                <div class="circle">
+                  <span id="days">0</span></div>
+                  <strong>Days</strong>
+                
+                <div class="circle">
+                  <span id="hours">0</span></div>
+                  <strong>Hours</strong>
+                
+                <div class="circle">
+                  <span id="minutes">0</span></div>
+                  <strong>Minutes</strong>
+                
+                <div class="circle">
+                  <span id="seconds">0</span></div>
+                  <strong>Seconds</strong>
+                
+             </div>
+           </div>
+    </div>
+</section>
+<section id="contact" class="contact-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 style="">Contact</h2>
+        <p>Vous avez des questions ou besoin d'aide ? Remplissez le formulaire ci-dessous et nous vous répondrons dans les plus brefs délais.</p>
+     </div>
+     <div class="row">
+        <div class="col-12 col-md-6 contact-info">
+            <p><i class="fas fa-phone"></i> Téléphone : <a href="tel:+212600123456">+212 600 123 456</a></p>
+            <p><i class="fas fa-envelope"></i> Email : <a href="mailto:contact@votreentreprise.com">contact@votreentreprise.com</a></p>
+            <p><i class="fas fa-map-marker-alt"></i> Adresse : Université Ibn Zohr d’Agadir , Maroc</p>
+            <div class="social-links">
+              <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+              <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+        <div class="col-12 col-md-6">
+            <form id="contactForm" method="post" action="">
+                {% csrf_token %}
+                <div class="form-group">
+                  <label for="fullName">Nom et prénom</label>
+                  <input type="text" id="fullName" name="full_name" class="form-control" placeholder="Votre Nom et prénom" required>
+                </div>
+                <div class="form-group">
+                  <label for="email">Email</label>
+                  <input type="email" id="email" name="email" class="form-control" placeholder="Votre Email " required>
+                </div>
+                <div class="form-group">
+                  <label for="message">Message</label>
+                  <textarea id="message" name="message" class="form-control" rows="5" placeholder="Écrivez votre message ici..."></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Envoyer Message</button>
+              </form>
+        </div>
+        
+
+     </div>
+      
+    </div>
+  </section>
+  <section>
+    <div class="sponsors-bar">
+        <div class="sponsors-list">
+            <div class="sponsor"><img src="{% static 'img/s1.png' %}" alt=""></div>
+            <div class="sponsor"><img src="{% static 'img/s2.png' %}" alt=""></div>
+            <div class="sponsor"><img src="{% static 'img/s3.png' %}" alt=""></div>
+            <div class="sponsor"><img src="{% static 'img/s4.png' %}" alt=""></div>
+            <div class="sponsor"><img src="{% static 'img/s5.png' %}" alt=""></div>
+            <div class="sponsor"><img src="{% static 'img/s1.png' %}" alt=""></div>
+            <div class="sponsor"><img src="{% static 'img/s2.png' %}" alt=""></div>
+            <div class="sponsor"><img src="{% static 'img/s3.png' %}" alt=""></div>
+            <div class="sponsor"><img src="{% static 'img/s4.png' %}" alt=""></div>
+            <div class="sponsor"><img src="{% static 'img/s5.png' %}" alt=""></div>
+            <!-- Ajoutez plus de sponsors si nécessaire -->
+        </div>
+    </div>
+  </section>
+  
+
+<script>
+    function scrollDown() {
+        const list = document.querySelector('.scrolling-list');
+        list.scrollBy({ top: 100, behavior: 'smooth' });
+    }
+</script>
+{% endblock %}
