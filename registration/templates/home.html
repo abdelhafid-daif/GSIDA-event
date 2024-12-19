@@ -3,7 +3,20 @@
 {% block title %}Home{% endblock %}
 
 {% block content %}
-
+{% if messages %}
+<div class="alert-container">
+    {% for message in messages %}
+    <div class="alert  alert-success alert-dismissible fade show" role="alert">
+      <div class="{{ message.tags }}">
+         {{ message }} <strong> Merci !</strong>
+      </div>
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    {% endfor %}
+</div>
+{% endif %}
 <div class="main-banner">
     <video autoplay muted loop id="myVideo">
         <source src="{% static 'vd/1111.mp4' %}" type="video/mp4">
@@ -17,9 +30,14 @@
             <div class="col-lg-6 animate__animated animate__fadeInUp">
               
               <h2 class="animate__animated animate__fadeInDown" style="color: #f0f0f1;">1° Edition 2025</h2>
-              <h3 class="animate__animated animate__fadeInUp animate__delay-1s">Conférence Internationale sur la Gouvernance Sécuritaire, l'Innovation et le Développement en Afrique</h3>
+              <h3 class="animate__animated animate__fadeInUp animate__delay-1s">Conférence Internationale sur la Gouvernance Sécuritaire, l'Innovation et le 
+                Développement en Afrique (GSIDA) </h3>
+                
             </div>
           </div>
+          <h3>Rejoignez-nous pour une exploration approfondie des défis et solutions 
+            concernant la gouvernance sécuritaire, l’innovation, et le développement 
+            durable en Afrique. </h3>
 
       </div> 
 </div>
@@ -28,8 +46,11 @@
         <div class="row">
           <div class="col-lg-6 animate__animated animate__fadeInLeft">
             <h2 >A Propos de l'événement </h2>
-            <p>Cet événement mettra un accent particulier sur l'importance de la participation du secteur privé et des collectivités locales dans la gouvernance sécuritaire. En effet, les actions de sécurisation doivent être inclusives et impliquent la collaboration de tous les acteurs concernés, du secteur public au secteur privé, en passant par les autorités locales. À travers des débats enrichissants, des études de cas et des échanges d’expériences, nous aspirons à proposer des solutions concrètes et adaptées aux réalités locales.</p>
-          </div>
+            <p>prévue pour le 27 et 28 Novembre 2025 à l'Université Ibn Zohr, Agadir, est un événement majeur réunissant des experts, des chercheurs, des décideurs politiques, des entrepreneurs et des acteurs de la société civile pour discuter des enjeux contemporains de la gouvernance sécuritaire et du développement durable en Afrique.
+              Dans un contexte de mondialisation, les défis en matière de sécurité, de développement économique et de gestion des ressources nécessitent une approche multidimensionnelle, intégrant les nouvelles technologies, les pratiques de gouvernance innovantes, et la coopération régionale.</p>
+              <p>La soumission des résumés et des articles est <span style="color:#FFB200;">ouverte !</span></p>
+              <a href="#contact" style="color:#fff;" class="btn btnx">participer à la conférence <i class="fas fa-angle-right"></i></a>
+            </div>
           <div class="col-lg-3 animate__animated animate__fadeInUp">
             <h2>Ou ?</h2>
             <p>à l’Université Ibn Zohr d’Agadir , Maroc</p>
@@ -203,8 +224,9 @@
     
     <div class="container" >
         <div class="section-header">
+            <p>Dates de la conférence</p>
             <h2 style=""> le 27 et 28 novembre 2025</h2>
-            <p>à l’Université Ibn Zohr d’Agadir , Maroc</p>
+            <p>à l’Université Ibn Zohr, Agadir, Maroc </p>
         </div>
         <h3 style="align-items: center;"> </h3>
         <div class="mr-auto">
@@ -230,6 +252,28 @@
                 
              </div>
            </div>
+           <div class="row">
+            <div class="col">
+              <div class="section-header">
+                <p>Date limite de soumission des résumés  <h2 style=""> 30 Mai 2025</h2></p>
+                <p>Date limite de soumission des versions finales  <h2 style=""> 25 septembre 2025 </h2></p>            
+            </div>
+              
+            </div>
+            <div class="col">
+              <div class="section-header">
+                <p>La soumission des résumés et des articles est <span style="color:black;">ouverte !</span></p>
+                <p>	Rejoignez-nous pour une exploration approfondie des défis et solutions concernant la gouvernance sécuritaire, l’innovation, et le développement durable en Afrique.</p>
+            </div>
+            <div class="row">             
+                <a href="#" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#makeregistrationModal" data-participation-type="En présentiel" data-tarif="50 € (500 MAD)" data-tarif-pro="80 € (800 MAD)" data-tarif-gold="100 € (1000 MAD)"
+                data-description="Inscription en présentiel avec accès complet à l'événement.">
+                  Participer  <i class="fas fa-angle-right"></i>
+              </a>
+              
+            </div>
+          </div>
+           
     </div>
 </section>
 <section id="contact" class="contact-section">
@@ -250,7 +294,7 @@
             </div>
         </div>
         <div class="col-12 col-md-6">
-            <form id="contactForm" method="post" action="">
+            <form id="contactForm" method="post" action="{% url 'registration:home_avent' %}">
                 {% csrf_token %}
                 <div class="form-group">
                   <label for="fullName">Nom et prénom</label>
@@ -290,6 +334,120 @@
         </div>
     </div>
   </section>
+
+<!-- Modal -->
+<div class="modal fade" style="position: absolute;" id="registrationModal" tabindex="-1" aria-labelledby="registrationModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg"> <!-- Ajout de modal-lg pour un modal large -->
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="registrationModalLabel"><span id="descriptionDetail">---</span></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="row g-4 p-3"> <!-- Ajout de padding et d'espacement entre les colonnes -->
+        <div class="col-md-6"> <!-- Utilisation de col-md-6 pour une meilleure responsivité -->
+          <form id="registrationForm" method="POST" action="{% url 'registration:create_inscription' %}">
+            {% csrf_token %}
+            
+            <div class="modal-body">
+              <div class="mb-3">
+                <label for="nom" class="form-label">Nom</label>
+                <input type="text" class="form-control" id="nom" name="nom" required>
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" name="email" required>
+              </div>
+              <div class="mb-3">
+                <label for="organisation" class="form-label">Organisation</label>
+                <input type="text" class="form-control" id="organisation" name="organisation">
+              </div>
+              <input type="hidden" id="type_de_participation" name="type_de_participation">
+              <div class="mb-3">
+                <label for="informations_supplémentaires" class="form-label">Informations Supplémentaires</label>
+                <textarea class="form-control" id="informations_supplémentaires" name="informations_supplémentaires" rows="3"></textarea>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+              <button type="submit" class="btn btn-primary">S'inscrire</button>
+            </div>
+          </form>
+        </div>
+        <div class="col-md-6"> <!-- Utilisation de col-md-6 pour la responsivité -->
+          <div class="modal-body">
+            <p class="modal-title">Les frais de participation couvrent la documentation, la participation aux activités du colloque, l'accès aux différentes sessions et ateliers du colloque, ainsi que les pauses-café et déjeuners.</p>
+          </div>
+          <div class="modal-footer">
+            <div>
+            <p><strong>• Étudiants en doctorat :</strong> <span id="tarifDetail">---</span></p>
+            <p><strong>• Professeurs :</strong> <span id="tarifDetailPro">---</span></p>
+            <p><strong>• Professionnels :</strong> <span id="tarifDetailGold">---</span></p>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<!-- Modal -->
+<div class="modal fade" style="position: absolute;" id="makeregistrationModal" tabindex="-1" aria-labelledby="registrationModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg"> <!-- Ajout de modal-lg pour un modal large -->
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="registrationModalLabel"><span id="descriptionDetail">---</span></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="row g-4 p-3"> <!-- Ajout de padding et d'espacement entre les colonnes -->
+        <div class="col-md-6"> <!-- Utilisation de col-md-6 pour une meilleure responsivité -->
+          <form id="registrationForm" method="POST" action="{% url 'registration:create_inscription' %}">
+            {% csrf_token %}
+            
+            <div class="modal-body">
+              <div class="mb-3">
+                <label for="nom" class="form-label">Nom</label>
+                <input type="text" class="form-control" id="nom" name="nom" required>
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" name="email" required>
+              </div>
+              <div class="mb-3">
+                <label for="organisation" class="form-label">Organisation</label>
+                <input type="text" class="form-control" id="organisation" name="organisation">
+              </div>
+              <input type="hidden" id="type_de_participation" name="type_de_participation">
+              <div class="mb-3">
+                <label for="informations_supplémentaires" class="form-label">Informations Supplémentaires</label>
+                <textarea class="form-control" id="informations_supplémentaires" name="informations_supplémentaires" rows="3"></textarea>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+              <button type="submit" class="btn btn-primary">S'inscrire</button>
+            </div>
+          </form>
+        </div>
+        <div class="col-md-6"> <!-- Utilisation de col-md-6 pour la responsivité -->
+          <div class="modal-body">
+            <p class="modal-title">Les frais de participation couvrent la documentation, la participation aux activités du colloque, l'accès aux différentes sessions et ateliers du colloque, ainsi que les pauses-café et déjeuners.</p>
+          </div>
+          <div class="modal-footer">
+            <div>
+            <p><strong>• Étudiants en doctorat :</strong> <span id="tarifDetail">---</span></p>
+            <p><strong>• Professeurs :</strong> <span id="tarifDetailPro">---</span></p>
+            <p><strong>• Professionnels :</strong> <span id="tarifDetailGold">---</span></p>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
   
 
 <script>
@@ -298,4 +456,11 @@
         list.scrollBy({ top: 100, behavior: 'smooth' });
     }
 </script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+
+<!-- Popper.js (required for Bootstrap) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+
+<!-- Bootstrap JS -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-beta2/js/bootstrap.min.js"></script>
 {% endblock %}
